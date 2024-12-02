@@ -22,13 +22,14 @@ The repository is structured as follows:
 
 ### 1. Bootstrap Flux
 Run the following command to bootstrap Flux into the Kubernetes cluster and link it to this repository:
-`bash
+
+```bash
 flux bootstrap github \
   --context=default \
   --owner=<your-github-username> \
   --repository=flux-helm-config \
   --branch=main \
-  --personal `
+  --personal ```
 
 ### 2. Add a Helm Repository
 

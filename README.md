@@ -29,20 +29,22 @@ flux bootstrap github \
   --owner=<your-github-username> \
   --repository=flux-helm-config \
   --branch=main \
-  --personal ```
+  --personal
+```
 
 ### 2. Add a Helm Repository
 
 Create a `HelmRepository` resource in your repository to allow Flux to fetch charts:
 
-`yaml
+```yaml
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: bitnami
   namespace: flux-system
 spec:
-  url: https://charts.bitnami.com/bitnami`
+  url: https://charts.bitnami.com/bitnami
+  ```
 
 
 ---
@@ -58,7 +60,7 @@ Let me know if you'd like me to review the full `README.md` with all corrections
 
 Define a `HelmRelease` resource in your repository to deploy Nginx:
 
-`yaml
+```yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -76,7 +78,8 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
-    replicaCount: 2`
+    replicaCount: 2
+```
 
 
 
